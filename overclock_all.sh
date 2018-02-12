@@ -8,18 +8,22 @@ sudo nvidia-xconfig --allow-empty-initial-configuration
 
 # we're setting persistence mode first as it takes a lot of time
 # count in minutes with 13 GPUs
-sudo nvidia-smi -i 0 -pm 1
-sudo nvidia-smi -i 1 -pm 1
-sudo nvidia-smi -i 2 -pm 1
-sudo nvidia-smi -i 3 -pm 1
-sudo nvidia-smi -i 4 -pm 1
-sudo nvidia-smi -i 5 -pm 1
-sudo nvidia-smi -i 6 -pm 1
-sudo nvidia-smi -i 7 -pm 1
-sudo nvidia-smi -i 8 -pm 1
-sudo nvidia-smi -i 9 -pm 1
-sudo nvidia-smi -i 10 -pm 1
-sudo nvidia-smi -i 11 -pm 1
+sudo nvidia-smi -i 0 -pm 1 &
+sudo nvidia-smi -i 1 -pm 1 &
+sudo nvidia-smi -i 2 -pm 1 &
+wait
+sudo nvidia-smi -i 3 -pm 1 &
+sudo nvidia-smi -i 4 -pm 1 &
+sudo nvidia-smi -i 5 -pm 1 &
+wait
+sudo nvidia-smi -i 6 -pm 1 &
+sudo nvidia-smi -i 7 -pm 1 &
+sudo nvidia-smi -i 8 -pm 1 &
+wait
+sudo nvidia-smi -i 9 -pm 1 &
+sudo nvidia-smi -i 10 -pm 1 &
+sudo nvidia-smi -i 11 -pm 1 &
+wait
 sudo nvidia-smi -i 12 -pm 1
 
 # GPUs
